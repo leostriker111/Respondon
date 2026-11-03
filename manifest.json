@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Respondón",
+  "version": "1.0.0",
+  "description": "Llena campos de texto con IA: reviews, respuestas abiertas, comentarios. Con recetas, tonos, idiomas y sentimientos.",
+  "homepage_url": "https://github.com/leostriker111/Respondon",
+  "icons": {
+    "16": "iconos/16.png",
+    "48": "iconos/48.png",
+    "128": "iconos/128.png"
+  },
+  "action": {
+    "default_title": "Respondón — opciones"
+  },
+  "options_page": "opciones.html",
+  "background": {
+    "service_worker": "fondo.js"
+  },
+  "permissions": ["storage", "contextMenus", "declarativeNetRequest"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["presets.js", "campo.js"],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ]
+}

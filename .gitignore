@@ -1,0 +1,7 @@
+# El .zip que arma la CI (o tú a mano) para las releases.
+dist/
+*.zip
+
+# Llaves de extensión empaquetada: si alguna vez se genera un .crx, su .pem es secreto.
+*.pem
+*.crx
